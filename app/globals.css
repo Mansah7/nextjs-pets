@@ -644,3 +644,114 @@ textarea.form-field {
 .contact-list tr:nth-child(even) {
   background-color: #f1f1f1;
 }
+
+.open-chat {
+  position: fixed;
+  bottom: 16px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.open-chat svg {
+  color: #5061f6;
+  margin: auto;
+}
+
+.chat-container {
+  position: fixed;
+  z-index: 90;
+  bottom: 0;
+  right: 20px;
+  width: 290px;
+  height: 420px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease-out, transform 300ms ease-out, visibility 300ms ease-out ;
+}
+
+.chat-container--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.chat-title-bar {
+  background-color: #5061f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 10px 14px;
+}
+
+.chat-title-bar h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: normal;
+}
+.chat-log {
+  flex: 1;
+  overflow: auto;
+  padding: 10px 14px;
+}
+
+.chat-message {
+  margin: 0 60px 5px 0;
+  display: flex;
+}
+
+.chat-message-inner {
+  background-color: #AFAFAF;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 16px;
+  align-self: flex-start;
+
+}
+
+.chat-message.chat-message--self {
+  margin: 0 0 5px 60px;
+  justify-content: end;
+}
+
+.chat-message.chat-message--self .chat-message-inner {
+  background-color: #5061f6;
+}
+
+.chat-container input {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-top: 1px solid #efefef;
+}
+
+.chat-container input:focus {
+  outline: none;
+}
+
+.chat-unread_badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 50px;
+  line-height: 1;
+  font-size: .75rem;
+
+}
